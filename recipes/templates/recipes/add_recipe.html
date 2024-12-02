@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Добавить новый рецепт{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Добавить новый рецепт</h2>
+
+            <div class="form-group">
+                <label for="{{ form.title.id_for_label }}">Название рецепта</label>
+                {{ form.title|add_class:"form-control" }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.description.id_for_label }}">Описание рецепта</label>
+                {{ form.description|add_class:"form-control" }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.steps.id_for_label }}">Шаги приготовления</label>
+                {{ form.steps|add_class:"form-control" }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.cooking_time.id_for_label }}">Время приготовления (минуты)</label>
+                {{ form.cooking_time|add_class:"form-control" }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.image.id_for_label }}">Изображение</label>
+                {{ form.image|add_class:"form-control-file" }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.categories.id_for_label }}">Категории</label>
+                {{ form.categories|add_class:"form-control" }}
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Сохранить рецепт</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

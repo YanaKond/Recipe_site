@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Мои рецепты{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center mb-3">Мои рецепты</h1>
+
+    {% if recipes %}
+        <div class="row">
+            {% for recipe in recipes %}
+                <div class="col-md-4 mb-5">
+                    <div class="card">
+                        <a href="{% url 'recipe_detail' pk=recipe.pk %}">
+                            {% if recipe.image %}
+                                <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}">
+                            {% else %}
+                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Изображение не загружено">
+                            {% endif %}
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ recipe.title }}</h5>
+                            <p class="card-text">{{ recipe.description|truncatewords:15 }}</p>
+                            <div class="text-center mt-4">
+                                <a href="{% url 'recipe_detail' pk=recipe.pk %}" class="btn btn-warning">Посмотреть</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>У вас нет рецептов.</p>
+    {% endif %}
+</div>
+{% endblock %}
+
