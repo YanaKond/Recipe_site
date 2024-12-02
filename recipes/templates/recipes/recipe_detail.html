@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ recipe.title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="text-center">{{ recipe.title }}</h1>
+
+            <p class="text-muted text-center">Автор: {{ recipe.author.username }}</p>
+
+            {% if recipe.author == request.user %}
+            <div class="text-center mt-4">
+                <a href="{% url 'edit_recipe' pk=recipe.pk %}" class="btn btn-warning">Редактировать рецепт</a>
+            </div>
+            {% endif %}
+
+            <div class="my-4">
+                <h4>Нам понадобится:</h4>
+                <p>{{ recipe.description|linebreaksbr }}</p>
+            </div>
+
+            <div class="my-4">
+                <h4>Время приготовления:</h4>
+                <p>{{ recipe.cooking_time }} минут</p>
+            </div>
+
+            <div class="my-4">
+                <h4>Категории:</h4>
+                <p>
+                    {% for category in recipe.categories.all %}
+                        <span class="badge bg-secondary">{{ category.name }}</span>
+                        {% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            </div>
+
+            <div class="my-4">
+                <h4>Шаги приготовления:</h4>
+                <p>{{ recipe.steps|linebreaksbr }}</p>
+            </div>
+
+            {% if recipe.image %}
+            <div class="my-4">
+                <img src="{{ recipe.image.url }}" class="img-fluid" alt="Изображение рецепта">
+            </div>
+            {% endif %}
+
+
+            <div class="text-center mt-4">
+                <a href="{% url 'my_recipes' %}" class="btn btn-secondary">Вернуться к моим рецептам</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

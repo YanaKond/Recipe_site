@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block title %}Добавить новый рецепт{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Добавить новый рецепт</h2>
+
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="{{ form.title.id_for_label }}">Название рецепта</label>
+                {{ form.title|add_class:"form-control" }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.description.id_for_label }}">Нам понадобится:</label>
+                {{ form.description|add_class:"form-control" }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.cooking_steps.id_for_label }}">Шаги приготовления</label>
+                {{ form.steps|add_class:"form-control" }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.cooking_time.id_for_label }}">Время приготовления (минуты)</label>
+                {{ form.cooking_time|add_class:"form-control" }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.image.id_for_label }}">Изображение</label>
+                {% if form.instance.image %}
+                    <div class="mb-2">
+                        <img src="{{ form.instance.image.url }}" alt="Текущее изображение" class="img-fluid" style="max-height: 200px;">
+                    </div>
+                {% endif %}
+                {{ form.image|add_class:"form-control-file" }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.categories.id_for_label }}">Категории</label>
+                {{ form.categories|add_class:"form-control" }}
+            </div>
+
+            <div class="text-center mt-4 mb-5">
+                <button type="submit" class="btn btn-warning">Сохранить рецепт</button>
+            </div>
+
+        </form>
+    </div>
+{% endblock %}
