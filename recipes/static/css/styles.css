@@ -1,0 +1,201 @@
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+/* Общие стили */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    flex-grow: 1;
+}
+
+
+/* Стили для шапки */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+.site-title h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #333;
+    margin: 0;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.nav-link {
+     color: #333;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #333;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.site-title h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #333;
+    margin: 0;
+    text-align: right;
+}
+
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 2px solid #fff;
+    padding: 15px 30px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    width: 150px;
+    height: 150px;
+    margin-right: 15px;
+}
+
+.navbar-nav .nav-link {
+    text-decoration: none;
+    color: #000;
+    padding: 10px 15px;
+    transition: 0.3s ease-in-out;
+    margin-left: 10px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Стили для кнопок в меню */
+.navbar-nav .nav-link {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: black;
+}
+
+.custom-btn {
+    background-color: black; /* черный фон */
+    color: #ff7f32; /* рыжий цвет шрифта */
+    border-radius: 5px; /* закругленные края */
+    padding: 10px 20px; /* отступы внутри кнопки */
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s; /* плавный переход */
+}
+
+.custom-btn:hover {
+    background-color: white; /* белый фон при наведении */
+    color: black; /* черный текст при наведении */
+    text-decoration: none; /* убирает подчеркивание */
+}
+
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: auto;
+}
+
+/* Сообщения */
+.alert {
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Кастомные стили для страницы "Мои рецепты" */
+
+/* Заголовок страницы */
+h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* Стиль для карточек с рецептами */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.card .btn-primary {
+    background-color: #5a5a5a;
+    border-color: #5a5a5a;
+}
+
+.card .btn-primary:hover {
+    background-color: #444;
+    border-color: #444;
+}
+
+.center-btn {
+    display: block;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* Предупреждающее сообщение, если нет рецептов */
+.alert-warning {
+    font-size: 1rem;
+    color: #333;
+    background-color: #fffae6;
+    border-color: #ffcc00;
+    margin-top: 30px;
+}
+
+/* Отступы между карточками */
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
