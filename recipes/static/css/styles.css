@@ -4,8 +4,6 @@
     object-fit: cover;
 }
 
-
-/* Общие стили */
 html, body {
     height: 100%;
     margin: 0;
@@ -27,8 +25,6 @@ main {
     flex-grow: 1;
 }
 
-
-/* Стили для шапки */
 header {
     background-color: #ffffff;
     border-bottom: 1px solid #ddd;
@@ -102,7 +98,6 @@ header {
     border-radius: 5px;
 }
 
-/* Стили для кнопок в меню */
 .navbar-nav .nav-link {
     padding: 10px 15px;
     font-size: 1rem;
@@ -110,22 +105,20 @@ header {
 }
 
 .custom-btn {
-    background-color: black; /* черный фон */
-    color: #ff7f32; /* рыжий цвет шрифта */
-    border-radius: 5px; /* закругленные края */
-    padding: 10px 20px; /* отступы внутри кнопки */
+    background-color: black; 
+    color: #ff7f32; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
     text-align: center;
-    transition: background-color 0.3s, color 0.3s; /* плавный переход */
+    transition: background-color 0.3s, color 0.3s; 
 }
 
 .custom-btn:hover {
-    background-color: white; /* белый фон при наведении */
-    color: black; /* черный текст при наведении */
-    text-decoration: none; /* убирает подчеркивание */
+    background-color: white; 
+    color: black; 
+    text-decoration: none; 
 }
 
-
-/* Footer */
 footer {
     background-color: #000;
     color: #fff;
@@ -134,15 +127,11 @@ footer {
     margin-top: auto;
 }
 
-/* Сообщения */
 .alert {
     border-radius: 5px;
     margin-top: 20px;
 }
 
-/* Кастомные стили для страницы "Мои рецепты" */
-
-/* Заголовок страницы */
 h1 {
     font-size: 2rem;
     color: #333;
@@ -150,7 +139,6 @@ h1 {
     font-family: 'Georgia', 'Times New Roman', serif;
 }
 
-/* Стиль для карточек с рецептами */
 .card {
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -186,7 +174,6 @@ h1 {
     margin: 0 auto;
 }
 
-/* Предупреждающее сообщение, если нет рецептов */
 .alert-warning {
     font-size: 1rem;
     color: #333;
